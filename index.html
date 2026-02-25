@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Política de Privacidad — Mi Dinero 365</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green: #00D49A;
+      --dark-green: #00A87A;
+      --gold: #FFC857;
+      --bg: #0A0E1A;
+      --surface: #131929;
+      --card: #1A2235;
+      --text: #E8EEF8;
+      --muted: #8892A4;
+      --border: rgba(0,212,154,0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Fondo animado ── */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(0,212,154,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(0,168,122,0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Header ── */
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .logo-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--green), var(--dark-green));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 8px 24px rgba(0,212,154,0.3);
+    }
+
+    .logo-name {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-name span {
+      color: var(--green);
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(0,212,154,0.1);
+      border: 1px solid rgba(0,212,154,0.3);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      font-family: 'Space Mono', monospace;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Contenido ── */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    /* ── Tarjeta de resumen ── */
+    .summary-card {
+      background: linear-gradient(135deg, rgba(0,212,154,0.1), rgba(0,168,122,0.05));
+      border: 1px solid rgba(0,212,154,0.25);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .summary-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .summary-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .summary-item strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 3px;
+    }
+
+    .summary-item p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Secciones ── */
+    section {
+      margin-bottom: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-number {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(0,212,154,0.1);
+      border: 1px solid rgba(0,212,154,0.2);
+      padding: 4px 10px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Listas ── */
+    ul {
+      list-style: none;
+      margin: 14px 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+
+    ul li strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    /* ── Tarjeta destacada ── */
+    .highlight-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 18px 0;
+    }
+
+    .highlight-box.gold {
+      border-color: rgba(255,200,87,0.25);
+      background: rgba(255,200,87,0.05);
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* ── Contacto ── */
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .contact-card h3 {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      margin-bottom: 20px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--green), var(--dark-green));
+      color: #000;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .contact-email:hover { opacity: 0.85; }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 28px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    footer span { color: var(--green); }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      .summary-card { grid-template-columns: 1fr; }
+      header { padding: 40px 16px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-wrap">
+      <div class="logo-icon">💰</div>
+      <div class="logo-name">Mi Dinero <span>365</span></div>
+    </div>
+    <h1>Política de <em>Privacidad</em></h1>
+    <p class="subtitle">Cómo protegemos y manejamos tu información</p>
+    <div class="badge">Última actualización: Febrero 2026</div>
+  </header>
+
+  <main>
+
+    <!-- Resumen rápido -->
+    <div class="summary-card">
+      <div class="summary-item">
+        <div class="summary-icon">📱</div>
+        <div>
+          <strong>Solo en tu dispositivo</strong>
+          <p>Todos tus datos financieros se guardan localmente en tu celular.</p>
+        </div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-icon">🚫</div>
+        <div>
+          <strong>Sin servidores propios</strong>
+          <p>No tenemos servidores que almacenen tu información personal.</p>
+        </div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-icon">🔒</div>
+        <div>
+          <strong>No vendemos datos</strong>
+          <p>Nunca vendemos ni compartimos tu información con terceros.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. Información general -->
+    <section>
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2>Información General</h2>
+      </div>
+      <p>Mi Dinero 365 es una aplicación de finanzas personales desarrollada por RAMDSOFT. Esta política explica cómo manejamos la información cuando usas nuestra app.</p>
+      <p>Al descargar y usar Mi Dinero 365, aceptas las prácticas descritas en esta política. Si tienes preguntas, contáctanos en cualquier momento.</p>
+    </section>
+
+    <!-- 2. Datos que recopilamos -->
+    <section>
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2>Datos que Recopilamos</h2>
+      </div>
+      <p>Mi Dinero 365 almacena la siguiente información <strong>únicamente en tu dispositivo</strong>:</p>
+      <ul>
+        <li><strong>Transacciones financieras:</strong> ingresos y egresos que tú registras manualmente.</li>
+        <li><strong>Categorías personalizadas:</strong> las categorías que crees para organizar tus gastos.</li>
+        <li><strong>Metas de ahorro:</strong> los objetivos financieros que configures.</li>
+        <li><strong>Presupuestos:</strong> los límites de gasto por categoría (plan Premium).</li>
+        <li><strong>Preferencias de la app:</strong> idioma, moneda, tema claro/oscuro.</li>
+      </ul>
+      <div class="highlight-box">
+        <p>⚠️ <strong>Importante:</strong> No recopilamos nombres, correos electrónicos, números de teléfono, ni ningún dato de identificación personal.</p>
+      </div>
+    </section>
+
+    <!-- 3. Cómo usamos los datos -->
+    <section>
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2>Cómo Usamos los Datos</h2>
+      </div>
+      <p>Los datos que registras en la app se usan exclusivamente para:</p>
+      <ul>
+        <li>Mostrarte tu saldo, estadísticas e historial de movimientos.</li>
+        <li>Calcular el progreso de tus metas de ahorro.</li>
+        <li>Generar gráficas y análisis de tus hábitos financieros.</li>
+        <li>Enviarte alertas locales sobre presupuestos (sin conexión a internet).</li>
+      </ul>
+    </section>
+
+    <!-- 4. Almacenamiento -->
+    <section>
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2>Almacenamiento de Datos</h2>
+      </div>
+      <p>Todos los datos financieros se almacenan localmente en tu dispositivo usando <strong>Hive</strong>, una base de datos local cifrada. Esto significa:</p>
+      <ul>
+        <li>Tus datos nunca salen de tu celular hacia nuestros servidores.</li>
+        <li>No necesitas crear una cuenta para usar la app.</li>
+        <li>Si desinstelas la app o usas la función "Comenzar de cero", los datos se eliminan permanentemente.</li>
+        <li>Te recomendamos hacer respaldo periódico usando la función de exportar CSV (plan Premium).</li>
+      </ul>
+    </section>
+
+    <!-- 5. Anuncios -->
+    <section>
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2>Anuncios (Google AdMob)</h2>
+      </div>
+      <p>La versión gratuita de Mi Dinero 365 muestra anuncios a través de <strong>Google AdMob</strong>. AdMob puede recopilar cierta información para personalizar los anuncios, incluyendo:</p>
+      <ul>
+        <li>Identificador de publicidad del dispositivo (GAID).</li>
+        <li>Información general del dispositivo (modelo, sistema operativo).</li>
+        <li>Datos de uso anónimos para medir el rendimiento de los anuncios.</li>
+      </ul>
+      <div class="highlight-box gold">
+        <p>💡 <strong>Plan Premium:</strong> Los usuarios con suscripción activa no ven ningún anuncio. Consulta la política de privacidad de Google AdMob en <strong>policies.google.com/privacy</strong> para más detalles.</p>
+      </div>
+    </section>
+
+    <!-- 6. Suscripción Premium -->
+    <section>
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2>Suscripción Premium</h2>
+      </div>
+      <p>Los pagos de suscripción Premium se procesan a través de <strong>Google Play</strong>. No almacenamos ni tenemos acceso a tu información de pago. Google Play gestiona todos los datos de facturación de acuerdo con sus propias políticas de privacidad.</p>
+      <p>Solo guardamos en tu dispositivo si tienes una suscripción activa y su fecha de vencimiento.</p>
+    </section>
+
+    <!-- 7. Permisos -->
+    <section>
+      <div class="section-header">
+        <span class="section-number">07</span>
+        <h2>Permisos de la App</h2>
+      </div>
+      <p>Mi Dinero 365 solicita los siguientes permisos:</p>
+      <ul>
+        <li><strong>Internet:</strong> necesario únicamente para cargar los anuncios de AdMob (plan gratuito).</li>
+        <li><strong>Estado de la red:</strong> para verificar la conexión antes de cargar anuncios.</li>
+        <li><strong>Almacenamiento local:</strong> para guardar tus datos financieros en el dispositivo.</li>
+      </ul>
+      <p>La app <strong>no</strong> solicita acceso a contactos, cámara, micrófono, ubicación ni ningún otro permiso sensible.</p>
+    </section>
+
+    <!-- 8. Menores de edad -->
+    <section>
+      <div class="section-header">
+        <span class="section-number">08</span>
+        <h2>Menores de Edad</h2>
+      </div>
+      <p>Mi Dinero 365 no está dirigida a menores de 13 años. No recopilamos intencionalmente información de menores. Si eres padre o tutor y crees que tu hijo ha proporcionado información personal, contáctanos para eliminarla.</p>
+    </section>
+
+    <!-- 9. Cambios -->
+    <section>
+      <div class="section-header">
+        <span class="section-number">09</span>
+        <h2>Cambios a esta Política</h2>
+      </div>
+      <p>Podemos actualizar esta política ocasionalmente. Te notificaremos sobre cambios importantes a través de una actualización de la app. Te recomendamos revisar esta página periódicamente.</p>
+      <p>El uso continuo de Mi Dinero 365 después de cualquier cambio constituye tu aceptación de la nueva política.</p>
+    </section>
+
+    <!-- Contacto -->
+    <div class="contact-card">
+      <h3>¿Tienes preguntas?</h3>
+      <p>Si tienes dudas sobre esta política de privacidad o sobre cómo manejamos tus datos, escríbenos. Respondemos en menos de 48 horas.</p>
+      <a href="mailto:soporte@ramdsoft.com" class="contact-email">
+        📧 soporte@ramdsoft.com
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 <span>RAMDSOFT</span> · Mi Dinero 365 · Todos los derechos reservados</p>
+    <p style="margin-top:6px">Pasto, Nariño, Colombia</p>
+  </footer>
+
+</body>
+</html>
